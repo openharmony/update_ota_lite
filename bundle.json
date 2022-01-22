@@ -1,9 +1,9 @@
 {
     "name": "@ohos/update_ota_lite",
-    "version": "",
+    "version": "3.0",
     "description": "为轻量级设备提供升级写入相关的api",
     "homePage": "https://gitee.com/openharmony",
-    "license": "Apache V2",
+    "license": "Apache License 2.0",
     "repository": "https://gitee.com/openharmony/update_ota_lite",
     "domain": "os",
     "language": "",
@@ -18,8 +18,8 @@
         "ota",
         "lite"
     ],
-    "envs": [],
-    "dirs": [],
+    "envs": {},
+    "dirs": {},
     "author": {
         "name": "",
         "email": "",
@@ -36,27 +36,48 @@
         "destPath": "base/update/ota_lite"
     },
     "component": {
-        "name": "ota_lite",
+        "name": "update_ota_lite",
         "subsystem": "update",
         "syscap": [
             "SystemCapability.Updater.Raw"
         ],
         "features": [],
-        "adapted_system_type": [
+        "adapted_system_type": [ 
             "mini",
-            "small",
-            "standard"
+            "small"
         ],
         "rom": "",
         "ram": "",
         "deps": {
-            "components": [],
-            "third_party": []
+            "components": [
+                "startup_syspara_lite",
+                "utils_native"
+            ],
+            "third_party": [
+                "third_party_bounds_checking_function",
+                "third_party_mbedtls"
+            ]
         },
         "build": {
-            "sub_component": [],
-            "inner_kits": [],
-            "test": []
+            "sub_component": [
+                "//base/update/ota_lite/frameworks/source:hota"
+            ],
+            "inner_kits": [
+                {
+                    "name": "//base/update/ota_lite/frameworks:update_api",
+                    "header": {
+                        "header_files": [
+                            "hota_partition.h",
+                            "hota_updater.h"
+                        ],
+                        "header_base": "//base/update/ota_lite/interfaces/kits"
+                    }
+                }
+            ],
+            "test": [
+                "//base/update/ota_lite/frameworks/test/unittest/common:update_test"
+            ]
         }
     }
 }
+
