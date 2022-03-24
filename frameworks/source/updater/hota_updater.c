@@ -594,7 +594,7 @@ int HotaInit(ErrorCallBackFunc errorCallback, StatusCallBackFunc statusCallback)
         return result;
     }
 
-    g_infoCompBuff = reinterpret_cast<unsigned char *>(malloc(MAX_BUFFER_SIZE));
+    g_infoCompBuff = (unsigned char *)malloc(MAX_BUFFER_SIZE);
     if (g_infoCompBuff == NULL) {
         return OHOS_FAILURE;
     }
