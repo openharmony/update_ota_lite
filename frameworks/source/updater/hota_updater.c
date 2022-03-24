@@ -53,8 +53,8 @@ typedef struct {
 
 #pragma pack(1)
 typedef struct {
-    uint16 type;
-    uint16 length;
+    unsigned short type;
+    unsigned short length;
     unsigned int infoCompSize;
     unsigned int upgradePkgVersion;
     char productId[PRODUCT_ID_LENGTH];
@@ -65,7 +65,7 @@ typedef struct {
 #pragma pack(1)
 typedef struct {
     unsigned char addr[PARTITION_NAME_LENGTH];  /* partition name */
-    uint16 id;                                  /* component ID */
+    unsigned short id;                          /* component ID */
     unsigned char type;                         /* component type */
     unsigned char operType;                     /* component operation type. 0: need upgrade 1: need delete */
     unsigned char isDiff;                       /* Is Diff component */
@@ -88,10 +88,10 @@ typedef struct {
 } HotaNotifier;
 
 static HotaStatus g_otaStatus = HOTA_NOT_INIT;
-static uint16 g_allComponentNum = 0;
-static uint16 g_allComponentSize = 0;
-static uint16 g_recvComponentNum = 0;
-static uint16 g_infoCompAndSignSize;        /* the size of Info Component */
+static unsigned short g_allComponentNum = 0;
+static unsigned short g_allComponentSize = 0;
+static unsigned short g_recvComponentNum = 0;
+static unsigned short g_infoCompAndSignSize;        /* the size of Info Component */
 static CurrentDloadComp g_currentDloadComp = { 0 }; /* Currently downloading component information */
 static ComponentInfos g_componentInfos = { 0 };
 static HotaNotifier g_otaNotifier = { 0 };    /* OTA Notifier, notify caller when error or status changed */
