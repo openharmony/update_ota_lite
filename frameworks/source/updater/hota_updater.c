@@ -150,9 +150,6 @@ static void ReportErrorCode(HotaErrorCode errorCode)
 
 static bool IsDigest(const char *str)
 {
-    if (str == NULL) {
-        return false;
-    }
     const unsigned int len = strlen(str);
     for (unsigned int i = 0; i < len; i++) {
         if (str[i] < '0' || str[i] > '9') {
