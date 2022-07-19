@@ -14,15 +14,16 @@ Over the Air \(OTA\) provides the remote device update capability. Your devices 
 
 ```
 /base/update/ota_lite
-├── frameworks        # OTA update implementation, including update package parsing, verification, writing, and updating
-│   └── test          # Self-test code
-│   └── unittest      # Unit test code
-│   └── source        # updater module source code
-│       └── updater   # updater module code
-│       └── verify    # Verification algorithm code
-├── interfaces
-│   └── kits          # External APIs for OTA update
-├── hals              # Chip adaptation code, for example, HiSilicon chip adaptation code is located at device\hisilicon\hardware\update
+.
+├── frameworks         # OTA update implementation, including update package parsing, verification, writing, and updating
+│   ├── source         # updater module source code
+│   │   ├── updater    # updater module code
+│   │   └── verify     # Verification algorithm code
+│   └── test           # Self-test code
+│       └── unittest   # Unit test code
+├── hals               # Chip adaptation code
+└── interfaces         # External APIs
+    └── kits           # OTA update APIs
 ```
 
 ## Constraints<a name="section1718733212019"></a>
