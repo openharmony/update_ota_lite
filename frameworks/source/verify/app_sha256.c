@@ -23,7 +23,7 @@ void AppSha256Init(AppSha256Context *sha256)
     }
 
     mbedtls_sha256_init(&sha256->context);
-    mbedtls_sha256_starts_ret(&sha256->context, APP_SHA256_FLAG);
+    mbedtls_sha256_starts(&sha256->context, APP_SHA256_FLAG);
     return;
 }
 
@@ -33,7 +33,7 @@ void AppSha256Update(AppSha256Context *sha256, const uint8 *buffer, uint32 lengt
         return;
     }
 
-    mbedtls_sha256_update_ret(&sha256->context, buffer, length);
+    mbedtls_sha256_update(&sha256->context, buffer, length);
     return;
 }
 
@@ -43,6 +43,6 @@ void AppSha256Finish(AppSha256Context *sha256, uint8 *hashOut)
         return;
     }
 
-    mbedtls_sha256_finish_ret(&sha256->context, hashOut);
+    mbedtls_sha256_finish(&sha256->context, hashOut);
     return;
 }

@@ -59,8 +59,8 @@ int32 AppVerifyData(AppRsaContext *rsa, const uint8 *plainBuf, uint32 plainBufLe
     mbedtls_entropy_context entropy;
     mbedtls_rsa_set_padding(mbedtls_pk_rsa(rsa->context), MBEDTLS_RSA_PKCS_V21, MBEDTLS_MD_SHA256);
     mbedtls_entropy_init(&entropy);
-    if ((ret = mbedtls_rsa_pkcs1_verify(mbedtls_pk_rsa(rsa->context), NULL, NULL, MBEDTLS_RSA_PUBLIC, MBEDTLS_MD_SHA256,
-        plainBufLen, plainBuf, cipherBuf)) != 0) {
+    ret = mbedtls_rsa_pkcs1_verify(mbedtls_pk_rsa(rsa->context), MBEDTLS_MD_SHA256, plainBufLen, plainBuf, cipherBuf);
+    if (ret != 0) {
         printf("sign failed. %x\r\n", -ret);
         return OHOS_FAILURE;
     }
