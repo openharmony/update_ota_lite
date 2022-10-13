@@ -21,7 +21,7 @@ OTA（Over the Air）提供对设备远程升级能力，基于提供的接口�
 ## 目录<a name="section1464106163817"></a>
 
 ```
-/base/update/ota_lite
+/base/update/sys_installer_lite
 .
 ├── frameworks         # OTA升级实现，主要包括升级包解析验证、写入、升级的功能
 │   ├── source         # updater组件代码存放目录
@@ -65,11 +65,11 @@ OTA（Over the Air）提供对设备远程升级能力，基于提供的接口�
           "description": "",
           "optional": "false",
           "dirs": [
-            "base/update/ota_lite/frameworks",
-            "base/update/ota_lite/interfaces/kits"
+            "base/update/sys_installer_lite/frameworks",
+            "base/update/sys_installer_lite/interfaces/kits"
           ],
           "targets": [
-            "//base/update/ota_lite/frameworks:ota_lite"
+            "//base/update/sys_installer_lite/frameworks:sys_installer_lite"
           ],
       ......
     ```
@@ -89,7 +89,7 @@ OTA（Over the Air）提供对设备远程升级能力，基于提供的接口�
 
 [升级子系统](https://gitee.com/openharmony/docs/blob/master/zh-cn/readme/%E5%8D%87%E7%BA%A7%E5%AD%90%E7%B3%BB%E7%BB%9F.md)
 
-[**update\_ota\_lite**](https://gitee.com/openharmony/update_ota_lite)
+[**update\_sys\_installer\_lite**](https://gitee.com/openharmony/update_sys_installer_lite)
 
 [device\_hisilicon\_hardware](https://gitee.com/openharmony/device_hisilicon_hardware)
 
